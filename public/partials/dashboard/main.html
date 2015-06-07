@@ -1,0 +1,16 @@
+<div class="dashboard-wrapper">
+    <div class="side-nav" ng-show="!AuthenticationService.isLoggedIn()">
+        <a ui-sref="dashboard.home" ui-sref-active="active" class="animated fadeIn"><i class="fa fa-home"></i></a>
+        <a ui-sref="dashboard.library" ui-sref-active="active" class="animated fadeIn"><i class="fa fa-archive"></i></a>
+        <a ui-sref="dashboard.listings" ui-sref-active="active" class="animated fadeIn"><i class="fa fa-th-large"></i></a>
+         <a ui-sref="dashboard.inbox" ui-sref-active="active" class="animated fadeIn"><i class="fa fa-bullhorn"></i></a>
+        <a ui-sref="dashboard.profile" ui-sref-active="active" class="animated fadeIn"><i class="fa fa-gear"></i></a>
+        <a href="" class="animated fadeIn">
+	        <i class="top"></i>
+	        <i class="middle one"></i>
+	        <i class="middle two"></i>
+	        <i class="bottom"></i>
+	        </a>
+    </div>
+    <div class="dashboard-ui-wrapper" ui-view></div>
+</div>

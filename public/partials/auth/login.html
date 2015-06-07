@@ -1,0 +1,27 @@
+<div class="spa-login-wrapper center-middle round-5">
+    <h3>Member Login</h3>
+    <hr>
+    <form ng-submit="login()">
+        <div class="group">
+            <input type="text" name="user" ng-model="credentials.email" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Username/Email</label>
+        </div>
+        <div class="group">
+            <input type="password" name="user" ng-model="credentials.password" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+        </div>
+        <div class="group submit">
+            <button ng-class="{'active': isProcessing}">
+	            <span class="loader"><span class="loader-inner"></span></span>
+	            <span></span>
+            </button>
+        </div>
+        <a class="forgot" ui-sref="auth.forgot">Forgot Login Credentials?</a>
+    </form>
+    <a href="" class="login-response {{type}}" ng-class="{'active': isErrorThrown}">{{ flash }}</a>
+    <a ui-sref="auth.alternate" class="alternate-login">Alternate Login</a>
+</div>

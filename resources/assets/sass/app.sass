@@ -1,0 +1,426 @@
+@charset "UTF-8"
+@import 'base/_colors'
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+  display: block
+
+audio, canvas, progress, video
+  display: inline-block
+  vertical-align: baseline
+
+audio:not([controls])
+  display: none
+  height: 0
+
+[hidden], template
+  display: none
+
+html
+  font-family: sans-serif
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  margin: 0
+
+
+a
+  background: transparent
+  &:active, &:hover
+    outline: 0
+
+
+abbr[title]
+  border-bottom: 1px dotted
+
+b, strong
+  font-weight: bold
+
+dfn
+  font-style: italic
+
+h1
+  font-size: 2em
+  margin: 0.67em 0
+
+mark
+  background: #ff0
+  color: #000
+
+small
+  font-size: 80%
+
+sub
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+  top: -0.5em
+
+sub
+  bottom: -0.25em
+
+
+img
+  border: 0
+
+svg:not(:root)
+  overflow: hidden
+
+
+figure
+  margin: 1em 40px
+
+hr
+  -moz-box-sizing: content-box
+  box-sizing: content-box
+  height: 0
+
+pre
+  overflow: auto
+
+code, kbd, pre, samp
+  font-family: monospace, monospace
+  font-size: 1em
+
+
+button, input, optgroup, select, textarea
+  color: inherit
+  font: inherit
+  margin: 0
+
+button
+  overflow: visible
+  text-transform: none
+
+select
+  text-transform: none
+
+button, html input[type="button"]
+  -webkit-appearance: button
+  cursor: pointer
+
+input
+  &[type="reset"], &[type="submit"]
+    -webkit-appearance: button
+    cursor: pointer
+
+button[disabled], html input[disabled]
+  cursor: default
+
+button::-moz-focus-inner
+  border: 0
+  padding: 0
+
+input
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+  line-height: normal
+  &[type="checkbox"], &[type="radio"]
+    box-sizing: border-box
+    padding: 0
+  &[type="number"]
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+      height: auto
+  &[type="search"]
+    -webkit-appearance: textfield
+    -moz-box-sizing: content-box
+    -webkit-box-sizing: content-box
+    box-sizing: content-box
+    &::-webkit-search-cancel-button, &::-webkit-search-decoration
+      -webkit-appearance: none
+
+fieldset
+  border: 1px solid #c0c0c0
+  margin: 0 2px
+  padding: 0.35em 0.625em 0.75em
+
+legend
+  border: 0
+  padding: 0
+
+textarea
+  overflow: auto
+
+optgroup
+  font-weight: bold
+
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+td, th
+  padding: 0
+
+/* Main Stylesheet */
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+html,
+body
+	width: 100%
+	height: 100%
+
+body
+	background: $background-color
+	font-family: $robo-conden
+	overflow: hidden
+
+.spa-wrapper,
+.spa-auth-main-wrapper
+	width: 100%
+	height: 100%
+	position: relative
+	text-align: center
+
+	.spa-login-wrapper
+		background: $spa-auth-box-bg
+		width: 400px
+		height: 460px
+
+	h3
+		text-transform: uppercase
+		font-size: 1.3em
+		font-weight: 400
+		line-height: 3.4em
+		text-shadow: 0 1px 0 $white
+		letter-spacing: 2px
+		text-align: center
+		color: $default-color
+
+	form
+		text-align: center
+		padding: 0 0 20px 0
+
+		& .group
+			position: relative
+			margin: 2em 2em
+			text-align: center
+
+.dashboard-wrapper
+	width: 100%
+	height: 100%
+	position: relative
+
+	.side-nav
+		position: absolute
+		width: 100px
+		height: 100%
+		background: $nav-bar-color
+		box-shadow: inset -2px 0 0 $black
+		transition: all 0.8s ease-out
+		left: 0
+
+		a
+			cursor: pointer
+			display: block
+			position: relative
+			width: 100% 
+			height: 100px
+			line-height: 100px
+			font-size: 35px
+			color: $white
+			text-align: center
+			transition: all 0.8s ease
+
+			&.active
+				background: $default-color
+				box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1)
+
+			&:last-child
+				position: absolute
+				bottom: 0
+				transition: all 1.5s ease-in
+
+			i.top,
+			i.middle,
+			i.bottom
+				position: absolute
+				width: 30px
+				height: 3px 
+				background: $white
+				border-radius: 5px
+				left: calc(50% - 15px)
+				right: calc(50% - 15px)
+				transition: all 0.8s ease-in-out
+
+			i.top
+				top: 40px
+
+			i.middle
+				top: 50px
+				transition: all 1.2s ease !important
+
+			i.bottom
+				top: 60px
+
+			&.active i.top,
+			&.active i.bottom
+				opacity: 0
+
+
+			&.active i.middle.one
+				transform: rotate(45deg)
+
+			&.active i.middle.two
+				transform: rotate(-45deg)
+
+			&:nth-child(1)
+				animation-delay: 0.3s
+
+			&:nth-child(2)
+				animation-delay: 0.6s
+
+			&:nth-child(3)
+				animation-delay: 0.9s
+
+			&:nth-child(4)
+				animation-delay: 1.2s
+
+			&:nth-child(5)
+				animation-delay: 1.5s
+
+			&:nth-child(6)
+				animation-delay: 1.8s
+
+	.dashboard-ui-wrapper
+		position: absolute
+		width: calc(100% - 100px)
+		height: 100%
+		right: 0
+		background: $light-bg-color
+		box-shadow: inset 1px 0 0 $white
+		transition: all 0.8s ease-in-out
+
+		.google-map
+			width: calc(100% - 300px)
+			height: 100%
+
+			& map
+				width: 100%
+				height: 100%
+				z-index: 100
+
+		.listing-list-wrapper
+			position: absolute
+			background: #F6F6F6
+			width: 300px
+			height: 100%
+			right: 0
+			top: 0
+			bottom: 0
+			padding: 0px 10px 50px 10px
+			box-shadow: inset 2px 0 2px rgba(0, 0, 0, 0.2) 
+
+			.list-item
+				position: relative
+				list-style: none
+				margin: 20px auto
+				background: $white
+				width: 100%
+				height: 300px
+				border-radius: 5px
+				transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) 				
+				transition-delay: 0.2s  				
+				border: 1px solid rgba(0, 0, 0, 0.15)
+				box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+
+				.thumbnail
+					width: 100%
+					position: relative
+
+					& img
+						width: 100%
+						border-top-right-radius: 5px
+						border-top-right-radius: 5px
+
+					.overlay
+						background: linear-gradient(to bottom, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 0.7));
+						width: 100%
+						height: 100%
+						position: absolute
+						transition: all 1s
+
+					& h5
+						position: absolute
+						right: 10px
+						top: 10px
+						padding: 5px 10px
+						background: rgba(0, 0, 0, 0.5)
+						border-radius: 3px
+						color: $white
+						font-family: $open-sans
+						font-weight: 300
+
+					& h4
+						position: absolute
+						left: 20px
+						color: $light-bg-color
+						font-family: $open-sans
+						font-size: 18px
+						bottom: 40px
+						font-weight: 400
+						z-index: 99
+
+					& h6
+						position: absolute
+						left: 20px
+						color: $light-bg-color
+						font-family: $open-sans
+						bottom: 20px
+						font-size: 13px
+						font-weight: 300
+						z-index: 99
+
+					&:hover .overlay
+						background: linear-gradient(to bottom, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 0.75));
+
+				.content
+					height: auto
+					width: 100%
+					padding: 15px 20px
+					text-align: left
+
+					a
+						cursor: pointer
+						font-family: $open-sans
+						font-size: 15px
+						font-weight: 400
+
+						i
+							padding-right: 15px
+
+					p
+						font-family: $open-sans
+						margin: 10px 0
+						font-size: 13px
+						color: #666666
+						text-align: justify
+
+		.listing-detail-wrapper
+			background: #F9F9F9
+			visibility: hidden
+			opacity: 0
+			width: calc(100% - 350px)
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 200
+			transition: all 1.5s ease-in-out
+
+			&.active
+				visibility: visible !important
+				opacity: 1 !important

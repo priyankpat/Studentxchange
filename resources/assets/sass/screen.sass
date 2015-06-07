@@ -1,0 +1,402 @@
+@import 'base/_colors'
+
+$img-bg: url('../../resource/bg/bg-2.jpg')
+
+.bg-1
+	background: $img-bg
+
+.bg-sub
+	background: rgba(0, 0, 0, 0.25)
+
+.center-middle
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%);
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26);
+
+.round-5
+	border-radius: 5px
+
+hr
+  	border: 0
+  	float: left
+  	height: 1px
+  	margin: 5px auto
+  	position: relative
+  	width: 100%
+  	background-color: transparent !important  	
+  	background-color: rgba(51, 51, 51, 0.4)  	
+  	background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(rgba(51, 51, 51, 0)), color-stop(50%, rgba(51, 51, 51, 0.5)), to(rgba(51, 51, 51, 0)))    
+  	background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.5) 50%, rgba(51, 51, 51, 0))    
+  	background-image: -moz-linear-gradient(left, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.5) 50%, rgba(51, 51, 51, 0))    
+  	background-image: linear-gradient(to right, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.5) 50%, rgba(51, 51, 51, 0))     	
+  	background-repeat: no-repeat
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00333333', endColorstr='#00333333', GradientType=1)    
+    z-index: 1    
+
+hr:before        
+ 	border: 0        
+ 	content: ""        
+ 	height: 1px        
+ 	position: absolute
+    top: 1px        
+    right: 0
+    left: 0        
+    text-align: center        
+    background-color: transparent !important        
+    background-color: rgba(0, 0, 0, 0.8)        
+    background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(transparent), color-stop(50%, rgba(0, 0, 0, 0.2)), to(transparent))        
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2) 50%, transparent)        
+    background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2) 50%, transparent)        
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2) 50%, transparent)        
+    background-repeat: no-repeat        
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00333333', endColorstr='#00333333', GradientType=1)
+
+.group input, 
+.group input
+  font-size: 15px
+  padding: 10px 10px 10px 5px
+  display: block
+  width: 100%
+  border: none
+  background: transparent
+  border-bottom: 1px solid #7469CF
+  color: #333333
+  font-family: $open-sans
+
+.group input:focus, 
+.group input:focus
+  outline: none
+
+.group label, 
+.group label
+  color: #999
+  font-size: 15px
+  font-weight: normal
+  position: absolute
+  pointer-events: none
+  font-family: $open-sans
+  left: 5px
+  top: 15px
+  transition: 0.2s ease all
+  -moz-transition: 0.2s ease all
+  -webkit-transition: 0.2s ease all
+
+.group input
+  &:focus ~ label, 
+  &:valid ~ label
+    top: -20px
+    font-size: 14px
+    color: #7469CF
+
+.group input
+  &:focus ~ label, 
+  &:valid ~ label
+    top: -20px
+    font-size: 14px
+    color: #7469CF
+
+.group .bar, 
+.group .bar
+  position: relative
+  display: block
+  width: 100%
+
+.group .bar
+  &:before, 
+  &:after
+    content: ''
+    height: 2px
+    width: 0
+    bottom: 1px
+    position: absolute
+    background: #7469CF
+    transition: 0.2s ease all
+    -moz-transition: 0.2s ease all
+    -webkit-transition: 0.2s ease all
+
+.group .bar
+  &:before, 
+  &:after
+    content: ''
+    height: 2px
+    width: 0
+    bottom: 1px
+    position: absolute
+    background: #7469CF
+    transition: 0.2s ease all
+    -moz-transition: 0.2s ease all
+    -webkit-transition: 0.2s ease all
+
+.group .bar:before, 
+.group .bar:before
+  left: 50%
+
+.group .bar:after, 
+.group .bar:after
+  right: 50%
+
+.group input:focus ~ .bar
+  &:before, 
+  &:after
+    width: 50%
+
+.group input:focus ~ .bar
+  &:before,
+  &:after
+    width: 50%
+
+.group .highlight, 
+.group .highlight
+  position: absolute
+  height: 60%
+  width: 100px
+  top: 25%
+  left: 0
+  pointer-events: none
+  opacity: 0.5
+
+.group input:focus ~ .highlight, 
+.group input:focus ~ .highlight
+  -webkit-animation: inputHighlighter 0.3s ease
+  -moz-animation: inputHighlighter 0.3s ease
+  animation: inputHighlighter 0.3s ease
+
+@keyframes inputHighlighter
+  from
+    background: #7469CF
+  to
+    width: 0
+    background: transparent
+
+.group button, 
+.group button
+  width: 100%
+  padding: 10px
+  text-transform: uppercase
+  font-weight: 400
+  letter-spacing: 2px
+  outline: none
+  background: #7469CF
+  color: #F6F6F6
+  border: none
+  border-radius: 3px
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26)
+  text-shadow: 0 -1px 0 #7264E3
+  transition: all 0.3s
+
+.group button span:nth-child(2):before
+	content: 'Login'
+	transition: all 0.8s
+
+.group button:hover, 
+.group button:hover
+  background: #8F83F2
+  box-shadow: none
+
+.group button:active, 
+.group button:active,
+.group button.active
+  transform: scale(0.95)
+
+.group button.active
+	background: $processing-bg
+	box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 1)
+	color: $white !important
+	text-shadow: none
+
+	& span:nth-child(2):before
+		content: 'Authenticating'
+
+.group.submit
+	margin: 3em 2em !important
+
+.forgot
+	text-decoration: none
+	color: $gray-link
+	font-family: $open-sans
+	font-size: 15px
+
+.alternate-login,
+.login-response
+	cursor: pointer
+	display: block;
+	width: 100%
+	margin: 0 auto
+	line-height: 3em
+	background: lighten($default-color, 2%)
+	border-bottom-left-radius: 5px
+	border-bottom-right-radius: 5px
+	position: absolute
+	bottom: 0
+	color: $white
+	text-decoration: none
+	text-transform: uppercase
+	transition: all 0.5s
+	
+	&:hover
+		background: darken($default-color, 2%)
+
+.login-response.error
+	transition: all 1s !important;
+	opacity: 0
+	background: lighten($error-color, 10%)
+	
+	&.active
+		opacity: 1
+		z-index: 99
+
+	&:hover
+		background: lighten($error-color, 20%)
+
+.login-response.success
+	transition: all 1s !important;
+	opacity: 0
+	background: darken($success-color, 10%)
+	
+	&.active
+		opacity: 1
+		z-index: 99
+
+	&:hover
+		background: darken($success-color, 20%)
+
+.pg-anim
+	transition: all 10s ease-in-out
+
+	&.ng-animate.ng-enter
+		transition: scale(0.1)
+
+.pg-anim
+  &.ng-enter, 
+  &.ng-leave
+    position: absolute
+    left: 0
+    right: 0
+    -webkit-transition: all .5s ease-in-out
+    -moz-transition: all .5s ease-in-out
+    -o-transition: all .5s ease-in-out
+    transition: all .5s ease-in-out
+  &.ng-enter
+    opacity: 0
+    -webkit-transform: scale3d(0.7, 0.7, 0.7)
+    -moz-transform: scale3d(0.7, 0.7, 0.7)
+    transform: scale3d(0.7, 0.7, 0.7)
+  &.ng-enter-active
+    opacity: 1
+    -webkit-transform: scale3d(1, 1, 1)
+    -moz-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+  &.ng-leave
+    opacity: 1
+    -webkit-transform: translate3d(0, 0, 0)
+    -moz-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+  &.ng-leave-active
+    opacity: 0
+    -webkit-transform: translate3d(100px, 0, 0)
+    -moz-transform: translate3d(100px, 0, 0)
+    transform: translate3d(100px, 0, 0)
+
+.alternate
+	display: block
+	line-height: 3em
+	width: 70%
+	color: $white
+	text-decoration: none
+	font-family: $open-sans
+	font-size: 14px
+	text-transform: uppercase
+	border-radius: 5px
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26)
+	clear: both
+	margin: 30px auto
+	transition: all 0.3s ease-in-out
+
+	&:active
+		transform: scale(0.95)
+
+	i
+		padding: 0 20px 0 10px
+
+	&.facebook
+		background: $facebook-color
+
+	&.twitter
+		background: $twitter-color
+
+	&.google
+		background: $google-color
+
+	&.yahoo
+		background: $yahoo-color
+
+.loader
+  display: inline-block
+  width: 18px
+  height: 18px
+  position: absolute
+  border: 2px solid #Fff
+  top: calc(50% - 9px)
+  left: 20%
+  visibility: hidden
+  animation: loader 2s infinite ease
+
+.loader-inner
+  vertical-align: top
+  display: inline-block
+  width: 100%
+  background-color: #fff
+  animation: loader-inner 2s infinite ease-in
+
+.group button.active .loader
+	visibility: visible
+
+
+@keyframes loader
+	0%
+		transform: rotate(0deg)
+
+	25%
+		transform: rotate(180deg)
+
+	50%
+		transform: rotate(180deg)
+
+	75%
+		transform: rotate(360deg)
+
+	100%
+		transform: rotate(360deg)
+
+@keyframes loader-inner
+	0%
+		height: 0%
+
+	25%
+		height: 0%
+
+	50%
+		height: 100%
+
+	75%
+		height: 100%
+
+	100%
+		height: 0%
+
+@media (max-width: 600px)
+	.side-nav
+		left: -100px !important
+
+		& a:last-child
+			left: 100px !important
+			z-index: 99
+
+			i
+				background: $default-color !important
+
+	.dashboard-ui-wrapper
+		width: 100% !important
+		z-index: 90
