@@ -751,6 +751,15 @@ aside.sidebar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     border-left: 1px solid rgba(0, 0, 0, 0.15); }
 
+.spa-wrapper .landing_main, .spa-wrapper .landing_info {
+  width: 100%;
+  height: 100%;
+  min-height: 900px; }
+
+.spa-wrapper .landing_main {
+  background: url("../../assets/images/landing.jpg") no-repeat center top;
+  background-size: cover; }
+
 .bg-1 {
   background: url("../resource/bg/bg-2.jpg"); }
 

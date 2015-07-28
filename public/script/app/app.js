@@ -91,9 +91,31 @@ define(['angular', 'iScroll', 'ngIScroll', 'angularRouter', 'angularAnimate', 'a
                 url: '/policy',
                 templateUrl: 'partials/support/main.html'
             })
+            .state('landing', {
+                url: '/landing', 
+                templateUrl: 'partials/landing/home.html'
+            })
             $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
         }
     ]);
+    app.controller('landingController', ['$scope', '$location', '$state', function ($scope, $location, $state) {
+		$scope.pageClass = 'page-landing';
+		$scope.mainStyle = function () {
+			return "height: " + window.innerHeight + "px";
+		}
+
+		$scope.infoStyle = function () {
+			return "height: " + window.innerHeight + "px";
+		}
+
+		$scope.toggleLogin = function () {
+			$state.go('auth.login');
+		}
+
+		$scope.toggleRegister = function () {
+			$state.go('auth.register');
+		}
+	}]);
     app.controller('LoginController', function($scope, $location, $timeout, AuthenticationService, FlashService) {
         $scope.credentials = {
             user: "",
