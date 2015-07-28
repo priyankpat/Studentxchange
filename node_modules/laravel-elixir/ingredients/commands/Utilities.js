@@ -1,6 +1,7 @@
-var fs = require('fs');
-var gutil = require('gulp-util');
+var fs        = require('fs');
+var gutil     = require('gulp-util');
 var parsePath = require('parse-filepath');
+
 
 /**
  * Build up the given src file(s), to be passed to Gulp.
@@ -95,8 +96,11 @@ var parse = function(path) {
     return {
         name: segments.extname ? segments.basename : '',
         extension: segments.extname,
-        baseDir: segments.extname ? segments.dirname : [segments.dirname, segments.basename].join('/')
+        baseDir: segments.extname ? segments.dirname : [segments.dirname, segments.basename].join('/').replace('//', '/'),
+        isDir: ! !! segments.extname,
+        path: path
     };
+
 };
 
 

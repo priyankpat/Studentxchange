@@ -3,10 +3,10 @@
     <hr>
     <form ng-submit="login()">
         <div class="group">
-            <input type="text" name="user" ng-model="credentials.email" required>
+            <input type="email" name="user" ng-model="credentials.email" required>
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Username/Email</label>
+            <label>Email</label>
         </div>
         <div class="group">
             <input type="password" name="user" ng-model="credentials.password" required>
@@ -20,6 +20,8 @@
 	            <span></span>
             </button>
         </div>
+        <a class="register-link" ui-sref="auth.register">New Member? Register now!</a>
+        <br>
         <a class="forgot" ui-sref="auth.forgot">Forgot Login Credentials?</a>
     </form>
     <a href="" class="login-response {{type}}" ng-class="{'active': isErrorThrown}">{{ flash }}</a>

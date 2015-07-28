@@ -1,0 +1,145 @@
+    <div class="sidebar-wrapper">
+        <div class="featured-listing">
+            <img src="http://real-estate.aws.ipv4.ro/angular/images/photodune-3979102-superb-backyard-xs.jpg" alt="people">
+            <div class="overlay">
+                <h4>Featured Listing</h4>
+                <div class="bottom">
+                    <div class="type rent">RENT</div>
+                    <div class="price">$ 465.00/M</div>
+                    <div class="rating"><i class="fa fa-heart-o"></i><span>50</span></div>
+                </div>
+            </div>
+        </div>
+        <h5>Property Listings</h5>
+        <hr>
+        <ul class="listing-row" ng-controller="ListingBrowseController">
+            <li class="list-item" ng-repeat="list in listingData">
+                <div class="thumbnail">
+                    <img src="{{ list.image_path[1] }}" alt="">
+                </div>
+                <h4>Varsity Residence</h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p class="desc">
+                    {{ list.features | limitTo: 130 }} ...
+                </p>
+                <div class="bottom">
+                    <div class="type">RENT</div>
+                    <div class="price">$ {{ list.price }}/M</div>
+                    <a ui-sref="dashboard.listings.details({ listingId: list.post_id })" class="details"><i class="fa fa-search"></i><span>Details</span></a>
+                </div>
+            </li>
+            <!--<li class="list-item">
+                <div class="thumbnail">
+                    <img src="http://real-estate.aws.ipv4.ro/angular/images/photodune-196089-house-xs.jpg" alt="">
+                </div>
+                <h4>Varsity Residence</h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cupiditate deleniti ...
+                </p>
+                <div class="bottom">
+                    <div class="type">RENT</div>
+                    <div class="price">$ 500.00/M</div>
+                    <a href="" class="details"><i class="fa fa-search"></i><span>Details</span></a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="thumbnail">
+                    <img src="http://real-estate.aws.ipv4.ro/angular/images/photodune-196089-house-xs.jpg" alt="">
+                </div>
+                <h4>Varsity Residence</h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cupiditate deleniti ...
+                </p>
+                <div class="bottom">
+                    <div class="type">RENT</div>
+                    <div class="price">$ 500.00/M</div>
+                    <a href="" class="details"><i class="fa fa-search"></i><span>Details</span></a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="thumbnail">
+                    <img src="http://real-estate.aws.ipv4.ro/angular/images/photodune-196089-house-xs.jpg" alt="">
+                </div>
+                <h4>Varsity Residence</h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cupiditate deleniti ...
+                </p>
+                <div class="bottom">
+                    <div class="type">RENT</div>
+                    <div class="price">$ 500.00/M</div>
+                    <a href="" class="details"><i class="fa fa-search"></i><span>Details</span></a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="thumbnail">
+                    <img src="http://real-estate.aws.ipv4.ro/angular/images/photodune-196089-house-xs.jpg" alt="">
+                </div>
+                <h4>Varsity Residence</h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cupiditate deleniti ...
+                </p>
+                <div class="bottom">
+                    <div class="type">RENT</div>
+                    <div class="price">$ 500.00/M</div>
+                    <a href="" class="details"><i class="fa fa-search"></i><span>Details</span></a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="thumbnail">
+                    <img src="http://real-estate.aws.ipv4.ro/angular/images/photodune-196089-house-xs.jpg" alt="">
+                </div>
+                <h4>Varsity Residence</h4>
+                <p class="small">
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                    <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                </p>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cupiditate deleniti ...
+                </p>
+                <div class="bottom">
+                    <div class="type">RENT</div>
+                    <div class="price">$ 500.00/M</div>
+                    <a href="" class="details"><i class="fa fa-search"></i><span>Details</span></a>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+    <!--<a href="" class="sidebar-toggle" ng-click="toggleSidebar()"></a>-->
+     

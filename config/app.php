@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'https://studentxchange-pr1yankpat3l.c9.io',
 
 	/*
 	|--------------------------------------------------------------------------

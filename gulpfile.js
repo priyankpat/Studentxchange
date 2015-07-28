@@ -15,10 +15,11 @@ elixir.config.sourcemaps = false;
 elixir(function(mix) {
     mix.sass(['app.sass', 'screen.sass'])
     .coffee()
-    .version('css/all.css')
+    .version('public/css/all.css')
     .styles([
     	'app.css',
     	'font-awesome.min.css',
-    	'animate.css'
+    	'animate.css',
+    	'owl.carousel.min.css'
     ], 'public/css/all.css', 'public/css');
 });

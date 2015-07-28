@@ -12,6 +12,7 @@ require.config({
 		async: '../../script/vendor/async/async',
 		iScroll: '../../script/vendor/iscroll/iscroll',
 		ngIScroll: '../../script/vendor/iscroll/ng-iscroll.min',
+		owlCarousel: '../vendor/owlcarousel/owl.carousel.min',
 		appFactory: 'factory',
 		app: 'app'
 
@@ -29,9 +30,12 @@ require.config({
 		},
 		ngIScroll: {
 			deps: ['iScroll', 'angular'],
+		},
+		owlCarousel: {
+			deps: ['jquery']
 		}
 	},
-	priotity: ['angular']
+	priotity: ['angular', 'iScroll', 'ngIScroll', 'app']
 })
 
 require([

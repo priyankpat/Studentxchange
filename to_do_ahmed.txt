@@ -1,0 +1,3 @@
+-- have field to indidicate whetheer email has been activated or not
+-- register back end -- validate..sanitize..save
+-- generating a password

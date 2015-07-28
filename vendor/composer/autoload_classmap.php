@@ -6,13 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CreateBooksTable' => $baseDir . '/database/migrations/2015_06_08_211452_create_books_table.php',
+    'CreateHousingTable' => $baseDir . '/database/migrations/2015_06_08_203803_create_housing_table.php',
+    'CreateInstitutionTable' => $baseDir . '/database/migrations/2015_06_08_211331_create_institution_table.php',
     'CreateSessionTable' => $baseDir . '/database/migrations/2015_06_02_011735_create_session_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2015_06_02_011536_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
+    'HousingTableSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+    'InstitutionTableSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -426,4 +431,5 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/Text/Template.php',
+    'UserTableSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
 );

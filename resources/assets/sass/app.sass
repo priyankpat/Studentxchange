@@ -187,6 +187,14 @@ body
 		background: $spa-auth-box-bg
 		width: 400px
 		height: 460px
+		
+	.spa-register-wrapper
+		background: $spa-auth-box-bg
+		width: 400px
+		height: 550px
+		
+		.register-btn
+			margin-top: 30px !important
 
 	h3
 		text-transform: uppercase
@@ -206,7 +214,26 @@ body
 			position: relative
 			margin: 2em 2em
 			text-align: center
-
+			
+		& .group select
+			width: 100%
+			padding: 5px 10px
+			margin: 0
+			-webkit-border-radius: 4px
+			-moz-border-radius: 4px
+			border-radius: 4px
+			box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset
+			background: #f8f8f8
+			color: #888
+			border: none
+			outline: none
+			display: inline-block
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+			cursor: pointer
+			border: 1px solid #CCCCCC
+			
 .dashboard-wrapper
 	width: 100%
 	height: 100%
@@ -303,13 +330,45 @@ body
 		transition: all 0.8s ease-in-out
 
 		.google-map
-			width: calc(100% - 300px)
+			position: relative
+			width: 100%
 			height: 100%
+			transition: all 0.5s ease-in-out
+			
+			&.active
+				width: 50%
 
 			& map
 				width: 100%
 				height: 100%
 				z-index: 100
+				
+			& .nav
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				height: 60px
+				width: 100%
+				background-color: rgba(255, 255, 255, 0.9)
+				border-bottom: 1px solid #e2e9e6
+				z-index: 99
+				
+				a.sidebar-toggle
+					width: 60px
+					height: 60px
+					text-align: center
+					line-height: 60px
+					font-size: 23px
+					float: right
+					color: rgba(0, 0, 0, 0.6)
+					opacity: 0
+					transition: all 0.5s ease
+					visibility: hidden
+					
+					&.active
+						opacity: 1
+						visibility: visible
 
 		.listing-list-wrapper
 			position: absolute
@@ -323,6 +382,7 @@ body
 			box-shadow: inset 2px 0 2px rgba(0, 0, 0, 0.2) 
 
 			.list-item
+				cursor: pointer
 				position: relative
 				list-style: none
 				margin: 20px auto
@@ -330,10 +390,12 @@ body
 				width: 100%
 				height: 300px
 				border-radius: 5px
-				transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) 				
-				transition-delay: 0.2s  				
+				transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1)  				
 				border: 1px solid rgba(0, 0, 0, 0.15)
-				box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+				box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24)
+				
+				&:hover
+					background: darken($white, 15%)
 
 				.thumbnail
 					width: 100%
@@ -411,7 +473,7 @@ body
 			background: #F9F9F9
 			visibility: hidden
 			opacity: 0
-			width: calc(100% - 350px)
+			width: calc(100% - 300px)
 			height: 100%
 			position: absolute
 			top: 0
@@ -419,8 +481,372 @@ body
 			right: 0
 			bottom: 0
 			z-index: 200
-			transition: all 1.5s ease-in-out
+			transition: all 1s ease-in-out
 
 			&.active
 				visibility: visible !important
 				opacity: 1 !important
+				
+aside.sidebar
+	position: absolute
+	background: #F6F6F6
+	width: 100%
+	min-width: 350px
+	height: 100%
+	right: 0
+	top: 0
+	bottom: 0
+	right: -50%
+	transition: all 0.5s ease-in-out
+	overflow-y: scroll
+	
+	.sidebar-wrapper
+		position: relative
+		width: 100%
+		height: auto
+		overflow-y: auto
+	
+	a.sidebar-toggle
+		display: table
+		visibility: visible
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		height: 100%
+		width: 10px
+		transition: all 0.3s ease
+		background-color: rgba(0, 0, 0, 0.3)
+		text-decoration: none
+		z-index: 10
+		
+		&:after
+			display: table-cell
+			font: normal normal normal 14px/1 FontAwesome
+			font-size: inherit
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+			content: '\f142'
+			vertical-align: middle
+			color: #FFFFFF
+			text-align: center
+			
+		&:hover
+			width: 15px
+			
+	&.active
+		right: 0
+		
+	.featured-listing
+		width: 100%
+		height: 300px
+		overflow: hidden
+		position: relative
+			
+		img
+			width: 100%
+			min-height: 220px
+			vertical-align: middle
+			box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3)
+				
+		.overlay
+			position: absolute
+			width: 100%
+			height: 100%
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			background: rgba(0, 0, 0, 0.3)
+			
+			h4
+				line-height: 10em
+				font-size: 30px
+				color: #F8F8F8
+				text-transform: uppercase
+				font-weight: 400
+				letter-spacing: 5px
+				
+			.bottom
+				position: absolute
+				bottom: 0
+				height: 30px
+				line-height: 30px
+				font-size: 15px
+				
+				.type,
+				.price
+					float: left
+				
+				.type
+					height: 100%
+					padding: 0 20px
+					color: #F8F8F8
+					box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4)
+				
+				.price
+					background: rgba(0, 0, 0, 0.2)
+					height: 100%
+					padding: 0 20px
+					color: #FFFFFF
+					box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2)
+					
+				.rating
+					float: right
+					right: 0
+					padding: 0 20px
+					color: lighten(#e91e63, 20%)
+					
+					span
+						padding: 0 8px
+						letter-spacing: 3px
+						
+						
+	h5
+		line-height: 3em
+		text-align: center
+		text-transform: uppercase
+		font-size: 20px
+		margin: 0 30px
+		color: $default-color
+		
+	.listing-row
+		width: calc(100% - 15px)
+		margin: 10px auto
+		
+		.list-item
+			position: relative
+			width: calc(100% / 4 - 10px)
+			float: left
+			box-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.14)
+			padding: 0
+			margin: 10px 5px
+			border-radius: 5px
+			border: 1px solid rgba(0, 0, 0, 0.1)
+			text-align: left
+			padding-bottom: 40px
+			background: #FFFFFF
+			
+			.thumbnail
+				width: 100%
+				height: 200px
+				overflow: hidden
+				
+				img
+					width: 100%
+					border-top-left-radius: 5px
+					border-top-right-radius: 5px
+					
+			h4
+				font-family: $open-sans
+				font-size: 16px
+				line-height: 3em
+				color: #777777
+				font-weight: 400
+				margin: 0 20px
+				
+			p.small
+				font-size: 12px
+				margin: 0 20px
+				color: #f9a825
+				
+			p.desc
+				font-family: $open-sans
+				font-size: 13px
+				margin: 10px 20px
+				color: #333333
+				text-align: justify
+				
+			.bottom
+				position: absolute
+				left: 0
+				bottom: 0
+				right: 0
+				height: 40px
+				background: rgba(0, 0, 0, 0.02)
+				border-bottom-left-radius: 5px
+				border-bottom-right-radius: 5px
+				box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #FFFFFF
+				line-height: 40px
+				text-align: center
+				
+				.type,
+				.price
+					float: left
+				
+				.type
+					width: 33.333333%
+					height: 100%
+					padding: 0 20px
+					border-right: 1px solid rgba(0, 0, 0, 0.1)
+					box-shadow: 1px 0 0 #FFFFFF
+					color: #777777
+					text-shadow: 0 1px 0 #FFFFFF
+					text-align: center
+					
+				.price
+					width: 33.333333%
+					padding: 0 20px
+					color: #666666
+					border-right: 1px solid rgba(0, 0, 0, 0.1)
+					box-shadow: 1px 0 0 #FFFFFF
+					text-align: center
+					
+				a.details
+					width: 33.333333%
+					padding: 20px 8px
+					text-decoration: none
+					text-transform: uppercase
+					color: $default-color
+					text-align: center
+					
+					span
+						padding: 0 5px
+
+.sidebar-wrapper.details
+	
+	.listing-name
+		padding: 20px 40px
+		border-bottom: 1px solid rgba(0, 0, 0, 0.24)
+		
+		.sidebar-details-heading
+			font-size: 20px
+			text-align: left
+			font-family: $open-sans
+			font-weight: 400
+			color: #222222
+			text-shadow: 0 1px 0 #FFFFFF
+			
+		.address
+			text-align: left
+			font-family: $open-sans
+			font-size: 13px
+			color: #888888
+	
+	.listing-meta
+		border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+		height: 50px
+		line-height: 50px
+		background: rgba(0, 0, 0, 0.03)
+		
+		.meta
+			float: left
+			border-right: 1px solid rgba(0, 0, 0, 0.15)
+			box-shadow: 0 1px 0 #FFFFFF, inset -1px 1px 0 #FFFFFF
+			text-shadow: 0 1px 0 #FFFFFF
+			
+		.meta.rating
+			padding: 0 30px
+			color: #3498db
+			
+		.meta.likes
+			padding: 0 30px
+			font-family: $open-sans
+			font-size: 14px
+			
+			i
+				color: lighten(#e74c3c, 10%)
+			
+			span
+				padding: 0 10px
+				
+		.meta.contact
+			a
+				padding: 15px 20px
+				text-decoration: none
+				text-transform: uppercase
+				color: rgba(0, 0, 0, 0.7)
+				background: rgba(0, 0, 0, 0.05)
+				font-weight: 400
+				box-shadow: none !important
+				transition: all 0.5s ease
+				box-shadow: 0 1px 0 #FFFFFF, inset -1px 1px 0 #FFFFFF
+				
+				&:hover
+					background: rgba(0, 0, 0, 0.08)
+			
+		.meta.housing-type
+			padding: 0 30px
+			font-family: $open-sans
+			font-size: 14px
+			
+			span
+				padding: 0 10px
+				
+	.listing-carousel
+		padding-bottom: 5px
+		border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+		width: 50%
+	
+	
+	.listing-description
+		padding: 20px 30px
+		text-align: left
+		
+		h4
+			font-size: 20px
+			text-transform: uppercase
+			letter-spacing: 3px
+			color: #999999
+			text-align: center
+			line-height: 2em
+			font-weight: 400
+		
+		p
+			font-family: $open-sans
+			font-size: 14px
+			line-height: 30px
+			margin: 20px auto
+			color: #777777
+			
+			br
+				line-height: 3em
+
+.listing-details-list
+	list-style: none
+	
+.listing-facilities
+	list-style: none
+	width: 100%
+	height: auto
+	clear: both
+	line-height: 40px
+	display: table
+	
+	li
+		display: inline-table
+		width: calc(100% / 3)
+		float: left
+		padding: 8px 20px 8px 80px
+		color: #888888
+		
+		i
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			background: rgba(0, 0, 0, 0.04)
+			text-align: center
+			line-height: 40px
+			color: #222222
+			font-size: 18px
+		
+		span
+			text-transform: uppercase
+			font-size: 15px
+			font-family: $open-sans
+			padding: 0 10px
+			letter-spacing: 2px
+			
+.location-pic-map 
+	display: block
+	min-height: 369px
+	height: 369px
+	
+	.listing-carousel 
+		float: left
+	
+	.google-map
+		float: right
+		width: 50%
+		border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+		border-left: 1px solid rgba(0, 0, 0, 0.15)

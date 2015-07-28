@@ -7,10 +7,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <meta name="csrf_token" content="{{ csrf_token() }}">
+        <meta name="csrf-token" content="{!! csrf_token() !!}">
 
-        <link rel="stylesheet" href="{{ elixir("css/all.css") }}">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/all.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
         <!--[if IE]>
             <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />

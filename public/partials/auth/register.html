@@ -1,0 +1,40 @@
+<div class="spa-register-wrapper center-middle round-5">
+    <h3>User Registration</h3>
+    <hr>
+    <form ng-submit="register()">
+        <div class="group">
+            <input type="text" name="user" ng-model="credentials.fullname" title="Please provide your full name"  required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Full Name</label>
+        </div>
+        <div class="group">
+            <input type="text" name="user" pattern=".{5,15}" ng-model="credentials.username" title="Must be between 5 - 15 characters long" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Username</label>
+        </div>
+        <div class="group">
+            <input type="email" name="user" ng-model="credentials.email" title="Email must be valid" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Email</label>
+        </div>
+        <div class="group">
+            <select name="user" id="" ng-model="credentials.role" title="Please Select a Role" required>
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="landlord">Landlord</option>
+            </select>
+        </div>
+        <input type="checkbox" name="" class="checkbox" title="You must accept our User Agreement and Privacy Policy" required/><a ui-sref="policy" class="policy"><strong>I Accept User Agreement and Privacy Policy</strong></a>
+        <div class="group submit register-btn">
+            <button ng-class="{'active': isProcessing}">
+	            <span class="loader"><span class="loader-inner"></span></span>
+	            <span></span>
+            </button>
+        </div>
+    </form>
+    <a href="" class="login-response {{type}}" ng-class="{'active': isErrorThrown}">{{ flash }}</a>
+    <a ui-sref="auth.login" class="alternate-login">Member Login</a>
+</div>
