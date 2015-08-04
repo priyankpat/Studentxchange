@@ -15,8 +15,8 @@ return [
 	*/
 
 	'mailgun' => [
-		'domain' => '',
-		'secret' => '',
+		'domain' => 'email.mafam.co',
+		'secret' => 'key-636ba42abaf21207e122d1dcb553ae44',
 	],
 
 	'mandrill' => [
