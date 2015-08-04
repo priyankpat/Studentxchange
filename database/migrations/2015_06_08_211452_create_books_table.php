@@ -43,11 +43,18 @@ class CreateBooksTable extends Migration {
 			//$table->primary('post_id');
 			$table->integer('xchange_id')->unsigned();
 			$table->integer('institution_id')->unsigned();
+<<<<<<< HEAD
 			//$table->foreign('institution_id')->references('id')->on('institution')
 				  //->onDelete('restrict')->onUpdate('cascade');
 		    //$table->foreign('xchange_id')->references('xchange_id')->on('users')
 				  //->onDelete('restrict')->onUpdate('cascade');
 			$table->softDeletes();
+=======
+			$table->foreign('institution_id')->references('id')->on('institution')
+				  ->onDelete('restrict')->onUpdate('cascade');
+		    $table->foreign('xchange_id')->references('xchange_id')->on('users')
+				  ->onDelete('restrict')->onUpdate('cascade');
+>>>>>>> 678a7d70f3ab99cb9154287c2b49d7c4132a3138
 			$table->timestamps();
 		});
 	}

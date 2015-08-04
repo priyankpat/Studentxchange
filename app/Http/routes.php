@@ -24,7 +24,9 @@ Route::group(['prefix' => 'api'], function () {
 	Route::post('/auth/register', array('uses' => 'AuthController@register'));  //api endpoint to register a user
 	Route::post('/auth/register/validate/username', array('uses' => 'AuthController@validateUsername'));
 	Route::post('/auth/register/validate/email', array('uses' => 'AuthController@validateEmail'));
+
 	
+<<<<<<< HEAD
 	Route::get('/test/email', function () {
 	    $confirmation_code = str_random(30);
 	   return View::make("emails.verify", array("confirmation_code" => $confirmation_code));
@@ -35,6 +37,8 @@ Route::group(['prefix' => 'api'], function () {
         'uses' => 'AuthController@confirm'
     ]);
 	
+=======
+>>>>>>> 678a7d70f3ab99cb9154287c2b49d7c4132a3138
 	 /////// **** Listing Routes **** \\\\\\\\\\
 	//api endpoint to retrieve all the listing for a particlar institution id
     Route::get('/dashboard/get/listings', 'ListingController@getlistingsforinstitution');

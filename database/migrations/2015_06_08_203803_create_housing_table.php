@@ -38,8 +38,8 @@ class CreateHousingTable extends Migration {
 			$table->text('access_token');
 			$table->integer('xchange_id')->unsigned();
 			$table->integer('institution_id')->unsigned();
-			//$table->foreign('institution_id')->references('id')->on('institution')
-				  //->onDelete('restrict')->onUpdate('cascade');
+			$table->foreign('institution_id')->references('id')->on('institution')
+				  ->onDelete('restrict')->onUpdate('cascade');
 		    $table->foreign('xchange_id')->references('xchange_id')->on('users')
 				  ->onDelete('restrict')->onUpdate('cascade');
 			$table->softDeletes();

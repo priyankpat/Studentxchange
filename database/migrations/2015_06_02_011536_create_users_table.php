@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration {
 			$table->string('role');
 			$table->tinyInteger('activated')->default(0);
 			$table->timestamps();
-		//	$table->primary('xchange_id');
+			//$table->primary('xchange_id');
 			$table->integer('institution_id')->unsigned()->default(1);
-			//$table->foreign('institution_id')->references('id')->on('institution')
-				  //->onDelete('restrict')->onUpdate('cascade');
+			$table->foreign('institution_id')->references('id')->on('institution')
+				  ->onDelete('restrict')->onUpdate('cascade');
 			$table->string('confirmation_code')->nullable();
 			$table->rememberToken();
 		});
