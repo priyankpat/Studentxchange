@@ -852,10 +852,137 @@ aside.sidebar
 		border-left: 1px solid rgba(0, 0, 0, 0.15)
 		
 .spa-wrapper 
-  .landing_main, .landing_info
+	overflow-y: scroll
+
+  .landing_main, 
+  .landing_info
     width: 100%
     height: 100%
     min-height: 900px
+    
   .landing_main
-    background: url("../../assets/images/landing.jpg") no-repeat center top
-    background-size: cover
+		
+		header
+			width: 100%
+			height: 100px
+			position: relative
+			
+			.login
+				position: absolute
+				bottom: 0
+				right: 20%
+				animation-delay: 0.2s
+				
+			.register 
+				position: absolute
+				bottom: 0px
+				right: 28%
+				animation-delay: 0.5s
+				
+			.login,
+			.register
+				transition: all 0.2s ease-in-out
+				
+				&:active
+					transform: scale(0.9)
+					
+.landing_main >
+  footer
+    position: absolute
+    bottom: 20px
+    background: transparent
+    width: 100%
+    text-align: center
+  .search
+    width: 100%
+    height: auto
+    background: transparent
+    margin: 10% auto
+    >
+      h1
+        color: #F6F6F6
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 2em
+        -webkit-animation-delay: 0.8s
+        animation-delay: 0.8s
+        -moz-animation-delay: 0.8s
+      .search_box
+        cursor: pointer
+        padding: 0.7em 6em
+        background: #FFFFFF
+        color: #7469CF
+        border-radius: 0.3em
+        display: inline-block
+        text-transform: none
+        font-weight: 400
+        text-align: center
+        text-decoration: none
+        font-size: 1em
+        transition: all 0.5s
+        -webkit-transition: all 0.5s
+        -webkit-animation-delay: 1.2s
+        animation-delay: 1.2s
+        -moz-animation-delay: 1.2s
+        &:hover
+          background: #7469CF
+          color: #FFFFFF
+      .search.button
+        cursor: pointer
+        width: 250px
+        padding: 0.8em 2.5em
+        background: "transparent"
+        color: #FFFFFF
+        border-radius: 0.3em
+        text-transform: uppercase
+        font-weight: 500
+        text-align: center
+        text-decoration: none
+        font-size: 1em
+        margin: 2em auto
+        border: 2px solid #FFFFFF
+        clear: both
+        transition: all 0.5s
+        -webkit-transition: all 0.5s
+        -webkit-animation-delay: 1.6s
+        animation-delay: 1.6s
+        -moz-animation-delay: 1.6s
+        &:hover
+          background: #FFFFFF
+          color: #7469CF
+          border-color: transparent
+  .quick_info
+    position: relative
+    top: 1%
+    >
+      h4
+        color: #F6F6F6
+        font-weight: 300
+        font-size: 1.4em
+        -webkit-animation-delay: 1.9s
+        animation-delay: 1.9s
+        -moz-animation-delay: 1.9s
+      .info.button
+        cursor: pointer
+        background: #26B8E9
+        padding: 0.7em 2em
+        display: inline-block
+        border-radius: 0.3em
+        font-weight: 500
+        letter-spacing: 0.1em
+        font-size: 1.2em
+        text-transform: uppercase
+        color: #FFFFFF
+        margin: 1em auto
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1)
+        transition: all 0.5s
+        -webkit-transition: all 0.5s
+        -webkit-animation-delay: 2.3s
+        animation-delay: 2.3s
+        -moz-animation-delay: 2.3s
+        &:hover
+          background: #FFFFFF
+          color: #26B8E9
+        > i
+          padding-left: 0.5em
+          font-size: 1.2em

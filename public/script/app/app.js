@@ -28,7 +28,7 @@ define(['angular', 'iScroll', 'ngIScroll', 'angularRouter', 'angularAnimate', 'a
     });
     app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
         function($stateProvider, $urlRouterProvider, $httpProvider) {
-            $urlRouterProvider.otherwise('/404');
+            $urlRouterProvider.otherwise('/landing');
             $stateProvider.state('auth', {
                 url: '/auth',
                 templateUrl: 'partials/auth/main.html'

@@ -102,6 +102,7 @@ class AuthController extends Controller
             $newuser->fullname  = $fullname;
             $newuser->username = $username;
             $newuser->email = $email;
+            $newuser->access_token = Hash::make($email);
             $newuser->password  = Hash::make($password);
             $newuser->confirmation_code = $confirmation_code;
             $newuser->role= $role;
@@ -119,5 +120,20 @@ class AuthController extends Controller
         }
           // return "6addd";
         
+    }
+    
+    public function confirm($confirmation_code) {
+        if(!$confirmation_code) {
+            throw new InvalidConfirmationCodeException;
+        }
+        
+        $user = User::whereConfirmationCode($confirmation_code)->first();
+        if(!$user) {
+            throw new InvalidConfirmationCodeException;
+        }
+        
+        $user->activated = 1;
+        $user->confirmation_code = null;
+        $user->save();
     }
 }
